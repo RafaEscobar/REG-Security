@@ -18,7 +18,7 @@ class EntryFactory extends Factory
     {
         return [
             'name' => fake()->sentence(3),
-            'body' => fake()->paragraph(),
+            'body' => fake()->sentence(4),
             'comments' => fake()->paragraph(),
             'section_id' => fake()->numberBetween(1, 10),
         ];
