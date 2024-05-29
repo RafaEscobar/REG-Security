@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('entries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->text('body');
+            $table->text('comments');
+            $table->foreignId('section_id');
             $table->timestamps();
         });
     }
