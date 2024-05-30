@@ -15,12 +15,11 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        Section::factory(10)->create();
-        Entry::factory(10)->create();
+        // Section::factory(10)->create();
+        // Entry::factory(10)->create();
 
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            TagSeed::class
+        ]);
     }
 }
