@@ -6,7 +6,7 @@
                 <img src="{{ asset('storage/images/logo.png') }}" alt="" class="w-5/12 xs:w-4/12 sm:w-3/12 md:w-2/12">
                 @if (Route::has('login'))
                     @auth
-                        <div class="w-4/12 2xl:w-3/12 mt-8 flex justify-center">
+                        <div class="w-5/12 mt-8 flex justify-center">
                             <x-btn-basic url="/dashboard" label="Ir al inicio" />
                         </div>
                     @else
