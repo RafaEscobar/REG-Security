@@ -14,4 +14,9 @@ class Section extends Model
         'description',
         'user_id'
     ];
+
+    public function tag()
+    {
+        return $this->belongsTo(Tag::class);
+    }
 }
