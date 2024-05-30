@@ -11,5 +11,6 @@
                 <x-welcome :sections="$sections" />
             </div>
         </div>
+        <x-floating-btn />
     </div>
 </x-app-layout>
