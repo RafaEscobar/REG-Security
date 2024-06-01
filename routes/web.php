@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Section;
+use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,6 +15,7 @@ Route::middleware([
 ])->group(function () {
     Route::get('/dashboard', function () {
         $sections = Section::all();
-        return view('dashboard', compact('sections'));
+        $tags = Tag::all()->pluck('name', 'id');
+        return view('dashboard', compact('sections', 'tags'));
     })->name('dashboard');
 });
