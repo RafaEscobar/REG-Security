@@ -16,7 +16,7 @@
             </div>
             <div class="flex h-[15%] items-center justify-between border-t-2 border-gray-100 px-6 bg-gray-100 rounded-b-xl">
                 <div>
-                    <button id="close-btn" class="rounded-xl bg-cyan-500 px-4 py-2 text-center font-bold text-white hover:bg-cyan-300  active:bg-white active:text-blue-600 lg:px-3 lg:py-2">
+                    <button id="close-btn" class="rounded-xl px-4 py-2 text-center font-bold text-gray-800 hover:text-gray-500 active:text-gray-300 lg:px-3 lg:py-2 hover:-translate-y-1 hover:scale-110 duration-200">
                         <span class="text-center text-xs md:text-sm 2xl:text-xl">Cerrar</span>
                     </button>
                 </div>
