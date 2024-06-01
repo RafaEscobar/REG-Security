@@ -6,10 +6,14 @@
     display: none;
 }
 
-.blur-card {
-    backdrop-filter: blur(10px) saturate(200%);
-    -webkit-backdrop-filter: blur(10px) saturate(200%);
-    background-color: rgba(255, 255, 255, 0.36);
-    border-radius: 12px;
-    border: 1px solid rgba(209, 213, 219, 0.3);
+.element-hidden {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(0);
+    opacity: 0;
+}
+
+.element-show {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform: scale(1);
+    opacity: 1;
 }

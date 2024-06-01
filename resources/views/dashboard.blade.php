@@ -11,6 +11,7 @@
                 <x-welcome :sections="$sections" />
             </div>
         </div>
+
         <x-modal>
             <x-slot name="title">Ejemplo de titulo</x-slot>
             <x-slot name="body">
@@ -25,9 +26,12 @@
                 </button>
             </x-slot>
             <x-slot name="openBtn">
-                <button class="focus:outline-none p-2 bg-blue-600 text-white bg-opacity-75 rounded-lg ring-4 ring-indigo-300" type="button">Abrete alv</button>
+                <x-floating-btn>
+                    <x-slot name='icon'>
+                        <x-fas-plus-circle class="w-6 h-6" />
+                    </x-slot>
+                </x-floating-btn>
             </x-slot>
         </x-modal>
-        <x-floating-btn />
     </div>
 </x-app-layout>
