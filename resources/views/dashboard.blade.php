@@ -25,7 +25,7 @@
                 </button>
             </x-slot>
             <x-slot name="openBtn">
-                <button  class="focus:outline-none p-2 bg-blue-600 text-white bg-opacity-75 rounded-lg ring-4 ring-indigo-300" type="button">Abrete alv</button>
+                <button class="focus:outline-none p-2 bg-blue-600 text-white bg-opacity-75 rounded-lg ring-4 ring-indigo-300" type="button">Abrete alv</button>
             </x-slot>
         </x-modal>
         <x-floating-btn />
