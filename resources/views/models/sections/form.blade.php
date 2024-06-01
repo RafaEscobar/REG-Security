@@ -1,3 +1,3 @@
 <div>
-    {{ html()->text('name') }}
+    <x-basic-input placeholder="Nombre de la sección" />
 </div>
