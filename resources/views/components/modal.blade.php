@@ -1,8 +1,8 @@
 @props(['title', 'body', 'bottomButtons', 'openBtn'])
 
 <div>
-    <div>
-        <button id="btn-modal" class="focus:outline-none p-2 bg-blue-600 text-white bg-opacity-75 rounded-lg ring-4 ring-indigo-300" type="button">{{$openBtn}}</button>
+    <div id="btn-modal">
+        {{$openBtn}}
     </div>
     <div id="modal" class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-500 bg-opacity-50 transform scale-0 transition-transform duration-200">
         <div class="h-4/6 w-2/6 rounded-xl bg-white">
