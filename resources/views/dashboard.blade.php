@@ -18,7 +18,7 @@
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia nisi porro nihil, accusantium velit nemo vitae rem atque quidem voluptatem quo ullam, odit non eaque quaerat, deleniti ad ipsum!</span>
             </x-slot>
             <x-slot name="bottomButtons">
-                <x-btn label="Añadir"></x-btn>
+                <x-btn label="Guardar" class="bg-blue-600 text-white hover:bg-blue-400 active:bg-white active:text-black"></x-btn>
             </x-slot>
             <x-slot name="openBtn">
                 <x-floating-btn>
