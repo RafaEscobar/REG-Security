@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\EntryController;
+use App\Http\Controllers\SectionController;
 use App\Models\Section;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
@@ -13,6 +15,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
+    Route::resource('sections', SectionController::class);
+    Route::resource('access', EntryController::class);
     Route::get('/dashboard', function () {
         $sections = Section::all();
         $tags = Tag::all()->pluck('name', 'id');
