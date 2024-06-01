@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-6">
-    <x-basic-input placeholder="Nombre de mi sección" />
-    <x-basic-textarea placeholder="Descripción..." />
-    <x-basic-select placeholder="- Elige la categoria de tu sección -" :values="$tags" />
+    <x-basic-input placeholder="Nombre de mi sección" name="name" />
+    <x-basic-textarea placeholder="Descripción..." name="description" />
+    <x-basic-select placeholder="- Elige la categoria de tu sección -" :values="$tags" name='tag_id' />
     <label for="dropzone-file"
         class="mx-auto flex w-6/12 max-w-lg cursor-pointer flex-col items-center rounded-xl border-2 border-dashed border-blue-400 bg-white p-6 text-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" fill="none" viewBox="0 0 24 24"
