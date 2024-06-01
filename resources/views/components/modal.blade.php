@@ -11,7 +11,7 @@
                     <span class="text-2xl font-medium">{{Str::limit($title, 30)}}</span>
                 </div>
             </div>
-            <div class="h-[73%] px-6 py-4">
+            <div class="h-[73%] overflow-auto px-6 py-4">
                 {{ $body }}
             </div>
             <div class="flex h-[15%] items-center justify-between border-t-2 border-gray-100 px-6 bg-gray-100 rounded-b-xl">
