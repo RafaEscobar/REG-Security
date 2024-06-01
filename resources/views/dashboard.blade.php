@@ -11,14 +11,15 @@
                 <x-welcome :sections="$sections" />
             </div>
         </div>
-
         <x-modal>
             <x-slot name="title">Crear nueva sección</x-slot>
             <x-slot name="body">
-                <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia nisi porro nihil, accusantium velit nemo vitae rem atque quidem voluptatem quo ullam, odit non eaque quaerat, deleniti ad ipsum!</span>
+                {{ html()->form('POST', '/')->id('form-create-section')->open() }}
+                    {{ html()->text('username') }}
+                {{ html()->form()->close() }}
             </x-slot>
             <x-slot name="bottomButtons">
-                <x-btn label="Guardar" class="bg-blue-600 text-white hover:bg-blue-400 active:bg-white active:text-black"></x-btn>
+                <x-btn label="Guardar" class="bg-blue-600 text-white hover:bg-blue-400 active:bg-white active:text-black" id="create-section-submit"></x-btn>
             </x-slot>
             <x-slot name="openBtn">
                 <x-floating-btn>
