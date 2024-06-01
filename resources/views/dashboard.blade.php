@@ -13,17 +13,12 @@
         </div>
 
         <x-modal>
-            <x-slot name="title">Ejemplo de titulo</x-slot>
+            <x-slot name="title">Crear nueva sección</x-slot>
             <x-slot name="body">
                 <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi quia nisi porro nihil, accusantium velit nemo vitae rem atque quidem voluptatem quo ullam, odit non eaque quaerat, deleniti ad ipsum!</span>
             </x-slot>
             <x-slot name="bottomButtons">
-                <button class="rounded-xl bg-green-500 px-4 py-2 text-center font-bold text-white hover:bg-green-50 hover:text-blue-400 active:bg-white active:text-blue-600 lg:px-3 lg:py-2">
-                <span class="text-center text-xs md:text-sm 2xl:text-xl">Añadir</span>
-                </button>
-                <button class="rounded-xl bg-blue-500 px-4 py-2 text-center font-bold text-white hover:bg-green-50 hover:text-blue-400 active:bg-white active:text-blue-600 lg:px-3 lg:py-2">
-                    <span class="text-center text-xs md:text-sm 2xl:text-xl">Guardar</span>
-                </button>
+                <x-btn label="Añadir"></x-btn>
             </x-slot>
             <x-slot name="openBtn">
                 <x-floating-btn>
