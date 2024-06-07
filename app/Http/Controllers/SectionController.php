@@ -20,7 +20,7 @@ class SectionController extends Controller
                 ['user_id' => Auth()->user()->id]
             )
         );
-        $section->addMedia($request->imageSection->path())->toMediaCollection('sections');
+        $section->addMedia($request->imageSection->getRealPath())->toMediaCollection('sections');
         return redirect()->route('dashboard');
     }
 }
