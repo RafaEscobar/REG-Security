@@ -1,5 +1,4 @@
 export const btnModal = () => {
-    console.log('btnmodal excuteed');
     const btn = document.querySelector('#btn-modal');
     const closeBtn = document.querySelector('#close-btn');
     const modal = document.querySelector('#modal');

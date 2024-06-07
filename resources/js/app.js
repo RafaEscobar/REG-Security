@@ -3,5 +3,5 @@ import { previewImgCreateSection } from "./modules/preview-img-create-section";
 import { submitCreateSectionForm } from "./modules/submit-create-section-form";
 
 btnModal();
-submitCreateSectionForm();
+// submitCreateSectionForm();
 previewImgCreateSection();
