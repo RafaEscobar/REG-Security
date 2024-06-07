@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SectionRequest;
+use App\Models\Section;
 use Illuminate\Http\Request;
 
 class SectionController extends Controller
@@ -11,8 +13,14 @@ class SectionController extends Controller
         //
     }
 
-    public function store(Request $request)
+    public function store(SectionRequest $request)
     {
-        dd($request);
+        Section::create(
+            array_merge(
+                $request->all(),
+                ['user_id' => Auth()->user()->id]
+            )
+        );
+        return redirect()->route('dashboard');
     }
 }

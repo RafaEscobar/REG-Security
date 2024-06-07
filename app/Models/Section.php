@@ -12,6 +12,7 @@ class Section extends Model
     protected $fillable = [
         'name',
         'description',
+        'tag_id',
         'user_id'
     ];
 
