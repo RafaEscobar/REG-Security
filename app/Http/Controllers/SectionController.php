@@ -15,12 +15,13 @@ class SectionController extends Controller
 
     public function store(SectionRequest $request)
     {
-        Section::create(
+        $section = Section::create(
             array_merge(
                 $request->all(),
                 ['user_id' => Auth()->user()->id]
             )
         );
+        $section->addMedia($request->imageSection->path())->toMediaCollection('sections');
         return redirect()->route('dashboard');
     }
 }
