@@ -14,5 +14,4 @@ export const btnModal = () => {
         floatingBtnModal.classList.add('element-show');
         modal.classList.remove('scale-100');
     });
-
 }
