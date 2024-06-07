@@ -18,7 +18,7 @@ Route::middleware([
     Route::resource('sections', SectionController::class);
     Route::resource('access', EntryController::class);
     Route::get('/dashboard', function () {
-        $sections = Section::all();
+        $sections = Section::orderBy('created_at', 'desc')->paginate(12);
         $tags = Tag::all()->pluck('name', 'id');
         return view('dashboard', compact('sections', 'tags'));
     })->name('dashboard');
