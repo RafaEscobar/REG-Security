@@ -9,7 +9,7 @@
                 <div>
                     <span class="text-2xl font-medium">{{Str::limit($title, 30)}}</span>
                 </div>
-                <span class="absolute top-2 right-2 text-black focus:outline-none hover:text-gray-500 cursor-pointer" id="close-btn">
+                <span class="absolute top-3 right-3 text-black focus:outline-none hover:text-gray-500 cursor-pointer" id="close-btn">
                     <x-fas-x class="w-4 h-4" />
                 </span>
             </div>

@@ -1,6 +1,5 @@
 <div class="flex flex-col gap-6">
     <x-basic-input placeholder="Nombre de mi sección" name="name" isRequired='true' />
-    <input type="text" name="" id="" required>
     <x-basic-textarea placeholder="Descripción..." name="description" />
     <x-basic-select placeholder="- Elige la categoria de tu sección -" :values="$tags" name='tag_id' />
     <div class="flex justify-center items-center px-8 gap-6">
@@ -18,5 +17,7 @@
             </label>
         </div>
     </div>
-    <x-btn label="Guardar" class="bg-blue-700 text-white hover:bg-blue-500 active:bg-blue-300 active:text-white" id="create-section-submit" type="submit"></x-btn>
+    <div class="flex justify-end mt-6 mb-4">
+        <x-btn label="Guardar" id="create-section-submit" type="submit"></x-btn>
+    </div>
 </div>
