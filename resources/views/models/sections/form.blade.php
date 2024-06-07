@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-6">
-    <x-basic-input placeholder="Nombre de mi sección" name="name" isRequired='true' />
-    <x-basic-textarea placeholder="Descripción..." name="description" />
+    <x-basic-input placeholder="Nombre de mi sección" name="name" isRequired='true' maxLength="60" minLength="6" />
+    <x-basic-textarea placeholder="Descripción..." name="description" maxLength="220" minLength="12"  />
     <x-basic-select placeholder="- Elige la categoria de tu sección -" :values="$tags" name='tag_id' />
     <div class="flex justify-center items-center px-8 gap-6">
         <div class="w-6/12 text-center">
