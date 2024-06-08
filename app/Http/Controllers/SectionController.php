@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SectionRequest;
 use App\Models\Section;
-use Illuminate\Support\Facades\Storage;
 
 class SectionController extends Controller
 {
@@ -21,11 +20,14 @@ class SectionController extends Controller
                 ['user_id' => Auth()->user()->id]
             )
         );
-        $section->addMedia(
-            isset($request->imageSection) ?
-            $request->imageSection->getRealPath() :
-            Storage::path('public/images/desk.jpg')
-        )->toMediaCollection('sections');
+        if (isset($request->imageSection)) {
+            $section->addMedia($request->file('imageSection')->getRealPath())->toMediaCollection('sections');
+        } else {
+            //* TODO: EN PRODUCCIONT DESCOMENTAR ESTO PARA QUE SE USEN LAS IMAGENES QUE SE TIENEN EN EL PROYECTO.
+            // $section->addMediaFromUrl(Storage::path('public/images/desk.jpg'))->toMediaCollection('sections');
+            $section->addMediaFromUrl('https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')->toMediaCollection('sections');
+        }
+
         return redirect()->route('dashboard');
     }
 }
