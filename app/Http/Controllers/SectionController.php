@@ -16,7 +16,6 @@ class SectionController extends Controller
     public function store(SectionRequest $request)
     {
         try {
-            throw new Error('enbcfwebncjkewc');
             $section = Section::create(
                 array_merge(
                     $request->all(),
