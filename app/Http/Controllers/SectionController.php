@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\SectionRequest;
 use App\Models\Section;
+use Illuminate\Support\Facades\Storage;
 
 class SectionController extends Controller
 {
@@ -20,7 +21,11 @@ class SectionController extends Controller
                 ['user_id' => Auth()->user()->id]
             )
         );
-        $section->addMedia($request->imageSection->getRealPath())->toMediaCollection('sections');
+        $section->addMedia(
+            isset($request->imageSection) ?
+            $request->imageSection->getRealPath() :
+            Storage::path('public/images/desk.jpg')
+        )->toMediaCollection('sections');
         return redirect()->route('dashboard');
     }
 }
