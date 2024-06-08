@@ -27,7 +27,8 @@ class SectionController extends Controller
             // $section->addMediaFromUrl(Storage::path('public/images/desk.jpg'))->toMediaCollection('sections');
             $section->addMediaFromUrl('https://images.pexels.com/photos/796602/pexels-photo-796602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')->toMediaCollection('sections');
         }
-
-        return redirect()->route('dashboard');
+        $message = 'Por favor, completa tu perfil.';
+        $type = 'info';
+        return redirect()->route('dashboard')->with(compact('type', 'message'));
     }
 }
