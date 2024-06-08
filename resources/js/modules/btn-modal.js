@@ -1,17 +1,19 @@
-export const btnModal = () => {
-    const btn = document.querySelector('#btn-modal');
-    const closeBtn = document.querySelector('#close-btn');
-    const modal = document.querySelector('#modal');
-    const floatingBtnModal = document.querySelector('#floating-btn-modal');
+let btn = document.querySelector('#btn-modal');
+let closeBtn = document.querySelector('#close-btn');
+let modal = document.querySelector('#modal');
+let floatingBtnModal = document.querySelector('#floating-btn-modal');
 
-    btn.addEventListener('click', () => {
-        floatingBtnModal.classList.remove('element-show');
-        floatingBtnModal.classList.add('element-hidden');
-        modal.classList.add('scale-100');
-    });
-    closeBtn.addEventListener('click',() => {
-        floatingBtnModal.classList.remove('element-hidden');
-        floatingBtnModal.classList.add('element-show');
+export const buildModalEvents = () => {
+    //* Abrir modal y desaparecer floatingBtn
+    btn.addEventListener('click', () => _addActionsToTheEvent('open-modal'));
+    //* Cerrar modal y abrir floatingBtn
+    closeBtn.addEventListener('click', () => _addActionsToTheEvent('close-modal') );
+}
+
+const _addActionsToTheEvent = (type) => {
+    floatingBtnModal.classList.remove(type == 'open-modal' ? 'element-show' : 'element-hidden');
+    floatingBtnModal.classList.add(type == 'open-modal' ? 'element-hidden' : 'element-show');
+    (type == 'open-modal') ?
+        modal.classList.add('scale-100') :
         modal.classList.remove('scale-100');
-    });
 }
