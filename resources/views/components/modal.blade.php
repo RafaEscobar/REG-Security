@@ -1,43 +1,21 @@
-@props(['id', 'maxWidth'])
-
-@php
-$id = $id ?? md5($attributes->wire('model'));
-
-$maxWidth = [
-    'sm' => 'sm:max-w-sm',
-    'md' => 'sm:max-w-md',
-    'lg' => 'sm:max-w-lg',
-    'xl' => 'sm:max-w-xl',
-    '2xl' => 'sm:max-w-2xl',
-][$maxWidth ?? '2xl'];
-@endphp
-
-<div
-    x-data="{ show: @entangle($attributes->wire('model')) }"
-    x-on:close.stop="show = false"
-    x-on:keydown.escape.window="show = false"
-    x-show="show"
-    id="{{ $id }}"
-    class="jetstream-modal fixed inset-0 overflow-y-auto px-4 py-6 sm:px-0 z-50"
-    style="display: none;"
->
-    <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false" x-transition:enter="ease-out duration-300"
-                    x-transition:enter-start="opacity-0"
-                    x-transition:enter-end="opacity-100"
-                    x-transition:leave="ease-in duration-200"
-                    x-transition:leave-start="opacity-100"
-                    x-transition:leave-end="opacity-0">
-        <div class="absolute inset-0 bg-gray-500 opacity-75"></div>
+@props(['title', 'body', 'openBtn'])
+<div>
+    <div id="btn-modal">
+        {{$openBtn}}
     </div>
-
-    <div x-show="show" class="mb-6 bg-white rounded-lg overflow-hidden shadow-xl transform transition-all sm:w-full {{ $maxWidth }} sm:mx-auto"
-                    x-trap.inert.noscroll="show"
-                    x-transition:enter="ease-out duration-300"
-                    x-transition:enter-start="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-                    x-transition:enter-end="opacity-100 translate-y-0 sm:scale-100"
-                    x-transition:leave="ease-in duration-200"
-                    x-transition:leave-start="opacity-100 translate-y-0 sm:scale-100"
-                    x-transition:leave-end="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95">
-        {{ $slot }}
+    <div id="modal" class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-gray-500 bg-opacity-50 transform scale-0 transition-transform duration-200">
+        <div class="h-4/6 w-2/6 rounded-xl bg-white">
+            <div class="flex h-[12%] items-center justify-between pl-6 border-b-2 border-gray-100 bg-gray-100 rounded-t-xl relative">
+                <div>
+                    <span class="text-2xl font-medium">{{Str::limit($title, 30)}}</span>
+                </div>
+                <span class="absolute top-3 right-3 text-black focus:outline-none hover:text-gray-500 cursor-pointer" id="close-btn">
+                    <x-fas-x class="w-4 h-4" />
+                </span>
+            </div>
+            <div class="h-[88%] overflow-auto px-6 py-4">
+                {{ $body }}
+            </div>
+        </div>
     </div>
 </div>
