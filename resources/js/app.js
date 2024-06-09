@@ -1,5 +1,6 @@
 import { buildModalEvents } from "./modules/btn-modal";
 import { previewImgCreateSection } from "./modules/preview-img-create-section";
+import Lottie from "lottie-web";
 
 buildModalEvents();
 previewImgCreateSection();
@@ -24,4 +25,12 @@ document.addEventListener('DOMContentLoaded', () => {
             message.classList.add('hidden');
         }, 5500);
     }
-})
+});
+
+Lottie.loadAnimation({
+    container: document.querySelector('#empty-state'),
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    path: 'storage/animations/empty-state-one.json'
+});

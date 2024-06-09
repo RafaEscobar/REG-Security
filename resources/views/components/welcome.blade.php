@@ -11,8 +11,8 @@
             {{ $sections->links() }}
         </div>
     @else
-        <div class="bg-white h-screen p-4">
-            
+        <div class="bg-white h-screen p-4 w-full">
+            <div id="empty-state"></div>
         </div>
     @endif
 </div>
