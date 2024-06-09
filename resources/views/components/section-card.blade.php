@@ -1,6 +1,6 @@
 @props(['title', 'entriesCount', 'tag', 'imgUrl'])
 
-<div class="relative w-full rounded-xl h-6/6 border-2 border-blue-100">
+<div class="relative w-full rounded-xl h-6/6  overflow-hidden shadow-xl transition ease-out duration-300 hover:-translate-y-1 hover:scale-110 cursor-pointer">
     <img src="{{ $imgUrl }}" alt="" class="absolute left-0 top-0 h-full w-full object-cover rounded-xl" />
     <div
         class="absolute bottom-0 left-0 p-2 bg-white box-sh rounded-tr-xl">
